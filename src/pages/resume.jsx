@@ -1,13 +1,13 @@
 import React from "react"
 import Layout from "../components/layout"
-import Header from "../components/header"
-import { Divider } from "semantic-ui-react"
+//import Header from "../components/header"
+//import { Divider, Header } from "semantic-ui-react"
 
 export default function Resume() {
   return (
     <Layout>
-      <Header headerText="Resume" />
-      <Divider />
+      <h2>Resume</h2>
+
       <h2>Talent X Intern | Datacom (2020)</h2>
       <p>
         While in this role as a Datacom Talent X intern, I worked as a developer
@@ -28,11 +28,11 @@ export default function Resume() {
         make sure that the intended user experiences were translated into the
         application as closely as possible.
       </p>
-      <Divider />
+
       <h2>Student | Enspiral Dev Academy (2019)</h2>
       <p>Enspiral Dev Academy is a hands-on, and immersive software development bootcamp, that runs over the space of ten weeks.
           As a student, I learned both technical and agile skills that covered the . </p>
-      <Divider />
+
     </Layout>
   )
 }

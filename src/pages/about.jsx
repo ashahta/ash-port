@@ -1,11 +1,12 @@
 import React from "react";
 import Layout from "../components/layout";
-import Header from "../components/header";
+//import Header from "../components/header";
 
 export default function About() {
     return (
       <Layout>
-        <Header headerText="About Me" />
+        <h2>About Me</h2>
+        
           <p>
             After working within a varied range of industries for the past decade,
             taking a brief break to focus on my mental health, and pivoting into
@@ -20,6 +21,7 @@ export default function About() {
             able to make a difference in the areas that I am most passionate about
             - namely Intersectional diversity, and Women and Pasifika in tech.
           </p>
+
       </Layout>
     )
 };
