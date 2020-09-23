@@ -15,8 +15,11 @@
   },
   "dependencies": {
     "gatsby": "^2.24.61",
+    "gatsby-plugin-less": "^4.0.4",
+    "less": "^3.12.2",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "semantic-ui-less": "^2.4.1"
   },
   "devDependencies": {
     "prettier": "2.1.1"
