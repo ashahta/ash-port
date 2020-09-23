@@ -1,7 +1,8 @@
 import React,{useState} from "react"
-import { Image, Header, Icon, Button } from "semantic-ui-react"
+import { Image, Header, Button } from "semantic-ui-react"
 import ProfileImg from "../ProfileImg.png"
 import styled from "styled-components"
+import {AiOutlineClose} from "react-icons/ai"
 
 const StyledImage = styled(Image)`
     position: absolute;
@@ -28,7 +29,7 @@ export default function Dimmed() {
       {active && (
         <StyledDimmer>
           <Button icon onClick={handleClose}>
-            <Icon name="window-close" color="teal"/>
+            <AiOutlineClose />
           </Button>
           <Header>
             <Header.Subheader>
