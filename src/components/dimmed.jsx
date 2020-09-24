@@ -7,29 +7,41 @@ import Projects from "../pages/projects"
 import Resume from "../pages/resume"
 
 const StyledDiv = styled.div`
-  margin: 3rem auto;
-  maxwidth: 650;
-  padding: 0 1rem;
+  padding: 250px;
+  font-size: 18px
 `
 
-export default function Dimmed({view}) {
+export default function Dimmed({view, goHome}) {
  const [active, setActiveItem] = useState(true);
 
 // button selection dims page to show content & to close the dimmed pop-up
-  const handleClose = () => setActiveItem(false)
+  const handleClose = () => {
+    setActiveItem(false)
+    goHome()
+  }
+
+  const getContent = view => {
+      if (view === "about") {
+        return <About />
+      }
+      if (view === "projects") {
+        return <Projects />
+      }
+      if (view === "resume") {
+        return <Resume />
+      }
+    }
 
   return (
     <div>
-        <Dimmer
-          active={active}
-          onClickOutside={handleClose}
-          page
-        >
+      <Dimmer active={active} page>
+        <StyledDiv>
           <Button icon onClick={handleClose}>
             <Icon name="window close outline" />
           </Button>
-
-        </Dimmer>
+          {getContent(view)}
+        </StyledDiv>
+      </Dimmer>
     </div>
   )
 }
