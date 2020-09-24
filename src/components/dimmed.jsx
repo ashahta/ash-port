@@ -1,37 +1,20 @@
 import React,{useState} from "react"
-import { Image, Header, Button } from "semantic-ui-react"
-import ProfileImg from "../ProfileImg.png"
-import styled from "styled-components"
-import {AiOutlineClose} from "react-icons/ai"
-
-const StyledImage = styled(Image)`
-    position: absolute;
-    max-height: 300px
-`
-// const StyledButton =
-
-const StyledDimmer = styled.div`
-  background: black;
-  color: bisque;
-  opacity: 0.6;
-  // position: absolute
-`
+import { Header, Button, Dimmer, Icon } from "semantic-ui-react"
+import "semantic-ui-css/semantic.min.css"
 
 export default function Dimmed() {
   const [active, setActiveItem] = useState(false);
-  const handleOpen = () => setActiveItem(true)
-  const handleClose = () => setActiveItem(false)
 
+// button selection dims page to show content & to close the dimmed pop-up
+  const handleClose = () => setActiveItem(false)
 
   return (
     <div>
-      <StyledImage src={ProfileImg} onClick={handleOpen} circular />
       {active && (
-        <StyledDimmer>
+        <Dimmer active={active} onClickOutside={handleClose} page>
           <Button icon onClick={handleClose}>
-            <AiOutlineClose />
+            <Icon name="window close outline" />
           </Button>
-          <Header>
             <Header.Subheader>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in
               ipsum sed felis posuere sodales. Nulla tristique placerat elit
@@ -63,8 +46,7 @@ export default function Dimmed() {
               commodo massa viverra. Sed mattis nisl velit, ut cursus nibh
               posuere nec.
             </Header.Subheader>
-          </Header>
-        </StyledDimmer>
+        </Dimmer>
       )}
     </div>
   )
