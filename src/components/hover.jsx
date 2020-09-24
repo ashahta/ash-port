@@ -23,6 +23,8 @@ export default function Hover() {
   // button selection opens page
   const handleOpen = view => setView(view)
 
+  const goHome = () => setView("home")
+
   // const handlePageDimClose = () => setPageDim(false)
 
   const content = (
@@ -68,6 +70,7 @@ export default function Hover() {
       {view !== 'home' &&
         <Dimmed
         view={view}
+        goHome={goHome}
       />
       }
     </CenteredDiv>
