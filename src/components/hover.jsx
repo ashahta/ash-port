@@ -3,6 +3,7 @@ import { Dimmer, Image, Button } from "semantic-ui-react"
 import "semantic-ui-css/semantic.min.css"
 import ProfileImg from "../ProfileImg.png"
 import styled from "styled-components"
+import Dimmed from "../components/dimmed"
 
 const CenteredDiv = styled.div`
     display: flex;
@@ -10,36 +11,40 @@ const CenteredDiv = styled.div`
     justify-content: center;
 `
 
-
 export default function Hover() {
-  const [active, setActiveItem] = useState(false);
+  const [active, setActive] = useState(false)
+  const [view, setView] = useState("home")
+  // const [pageDim, setPageDim] = useState(false)
 
   // hover over picture shows button options
-  const handleShow = () => setActiveItem(true)
-  const handleHide = () => setActiveItem(false)
+  const handleShow = () => setActive(true)
+  const handleHide = () => setActive(false)
 
-  const handleOpen = () => setActiveItem(true)
+  // button selection opens page
+  const handleOpen = view => setView(view)
+
+  // const handlePageDimClose = () => setPageDim(false)
 
   const content = (
     <div>
       <Button.Group>
         <Button
           content="About"
-          onClick={handleOpen}
+          onClick={() => handleOpen("about")}
           basic
           inverted
           color="grey"
         />
         <Button
           content="Projects"
-          onClick={handleOpen}
+          onClick={() => handleOpen("projects")}
           basic
           inverted
           color="grey"
         />
         <Button
           content="Resume"
-          onClick={handleOpen}
+          onClick={() => handleOpen("resume")}
           basic
           inverted
           color="grey"
@@ -50,16 +55,21 @@ export default function Hover() {
 
   return (
     <CenteredDiv>
-        <Dimmer.Dimmable
-          as={Image}
-          dimmed={active}
-          dimmer={{ active, content }}
-          onMouseEnter={handleShow}
-          onMouseLeave={handleHide}
-          size="massive"
+      <Dimmer.Dimmable
+        as={Image}
+        dimmed={active}
+        dimmer={{ active, content }}
+        onMouseEnter={handleShow}
+        onMouseLeave={handleHide}
+        size="massive"
         src={ProfileImg}
         circular
-        />
+      />
+      {view !== 'home' &&
+        <Dimmed
+        view={view}
+      />
+      }
     </CenteredDiv>
   )
 }
