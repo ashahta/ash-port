@@ -21,7 +21,7 @@ export default function Projects() {
       </p>
       <Embed
         id="Ju80eMQxyC8"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         source="youtube"
       />
