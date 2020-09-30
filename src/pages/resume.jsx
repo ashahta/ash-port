@@ -1,4 +1,5 @@
 import React from "react"
+import { Divider } from "semantic-ui-react"
 import Layout from "../components/layout"
 
 export default function Resume() {
@@ -21,15 +22,23 @@ export default function Resume() {
         as Swift and Cocoa Touch for our application's UI.
       </p>
       <p>
-        This role also involved working closely with our UX designers, as
-        well as communicating with and taking on feedback from our client to
-        make sure that the intended user experiences were translated into the
+        This role also involved working closely with our UX designers, as well
+        as communicating with and taking on feedback from our client to make
+        sure that the intended user experiences were translated into the
         application as closely as possible.
       </p>
-
+      <Divider />
       <h2>Student | Enspiral Dev Academy (2019)</h2>
-      <p>Enspiral Dev Academy is a hands-on, and immersive software development bootcamp, that runs over the space of ten weeks.
-          As a student, I learned both technical and agile skills that covered the . </p>
+      <p>
+        Enspiral Dev Academy is a hands-on, and immersive software development
+        bootcamp. During my time in the program, I had completed between 600-700 hours of coding on projects within a team environment.
+      </p>
+      <p>
+        As a student, I learned technical skills that ranged from programming fundamentals, Test Driven Development, and Git, to building web server from scratch (Node & Express), and the Client Side JavaScript frameworks React and Redux.
+      </p>
+      <p>
+
+      </p>
 
     </Layout>
   )
