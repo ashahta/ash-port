@@ -6,15 +6,15 @@ import styled from "styled-components"
 import Dimmed from "../components/dimmed"
 
 const CenteredDiv = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `
 
 export default function Hover() {
   const [active, setActive] = useState(false)
   const [view, setView] = useState("home")
-  // const [pageDim, setPageDim] = useState(false)
 
   // hover over picture shows button options
   const handleShow = () => setActive(true)
@@ -25,7 +25,6 @@ export default function Hover() {
 
   const goHome = () => setView("home")
 
-  // const handlePageDimClose = () => setPageDim(false)
 
   const content = (
     <div>
@@ -67,12 +66,12 @@ export default function Hover() {
         src={ProfileImg}
         circular
       />
-      {view !== 'home' &&
-        <Dimmed
-        view={view}
-        goHome={goHome}
-      />
-      }
+        {view !== "home" &&
+          <Dimmed
+            view={view}
+            goHome={goHome}
+          />
+        }
     </CenteredDiv>
   )
 }
