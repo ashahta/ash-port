@@ -8,7 +8,10 @@ import Resume from "../pages/resume"
 
 const StyledDiv = styled.div`
   padding: 250px;
-  font-size: 18px
+  font-size: 18px;
+  overflow: scroll;
+  max-height: 100vh;
+
 `
 
 export default function Dimmed({view, goHome}) {
